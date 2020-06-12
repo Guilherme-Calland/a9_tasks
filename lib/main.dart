@@ -1,3 +1,4 @@
+import 'package:a9_tasks/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,19 +15,3 @@ class MyTasks extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Text(
-          'My Tasks',
-          style: TextStyle(
-            fontSize: 50,
-            color: Colors.green
-          ),)
-      )
-    );
-  }
-}
