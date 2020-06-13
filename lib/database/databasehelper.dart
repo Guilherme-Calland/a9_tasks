@@ -31,7 +31,9 @@ class DatabaseHelper{
     await db.execute(sql);
   }
 
-  create(Map<String, dynamic> data){
-    
+  create(Map<String, dynamic> data) async{
+    var datab = await database;
+    int result = datab.insert('tasks,', data);
+    return result;
   }
 }
