@@ -1,3 +1,5 @@
+import 'package:a9_tasks/widgets/task.button.dart';
+import 'package:a9_tasks/widgets/task.list.dart';
 import 'package:flutter/material.dart';
 
 class TaskArea extends StatelessWidget {
@@ -6,22 +8,13 @@ class TaskArea extends StatelessWidget {
     return Expanded(
       child: Container(
         padding: EdgeInsets.only(left: 40, top: 20),
-        child: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (context, index){
-            return ListTile(
-              contentPadding: EdgeInsets.all(0),
-              title: Text(
-                'task $index',
-                style: TextStyle(
-                  color: Colors.green
-                )
-              ),
-            );
-          }
+        child: Column(
+          children: <Widget>[
+            TaskList(),
+            TaskButton(),
+          ],
         )
       ),
     );
   }
 }
-
