@@ -24,6 +24,13 @@ class AppData extends ChangeNotifier{
     notifyListeners();
   }
 
+  updateTask(Task task) async {
+    Map<String, dynamic> data = task.taskToMap();
+    int result = await database.update(data);
+    readTasks();
+    return result;
+  }
+
   deleteTask(int id) async {
     int result = await database.delete(id);
     readTasks();

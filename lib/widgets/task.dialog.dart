@@ -4,7 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TaskDialog extends StatelessWidget {
-  var controller = TextEditingController();
+  Task task;
+  final controller = TextEditingController();
+  String addOrChange = '';
+  TaskDialog({this.task}){
+    if(task != null){
+      controller.text = task.name;
+      addOrChange = 'change';
+    } else {
+      addOrChange = 'add';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,14 +34,14 @@ class TaskDialog extends StatelessWidget {
               ),
               FlatButton(
                 child: Text(
-                  'add',
+                  addOrChange,
                   style: TextStyle(
                     color: Colors.black
                   ),
                 ),
                 color: Colors.green,
                 onPressed: () {
-                  createTask(context);
+                  addOrChange == 'add' ? createTask(context) : updateTask(context);
                   return Navigator.pop(context);
                 },
               )
@@ -47,5 +58,11 @@ class TaskDialog extends StatelessWidget {
     int result = await Provider.of<AppData>(context, listen: false)
     .createTask(task);
     print('id of object created: $result');
+  }
+
+  updateTask(BuildContext context) async {
+    task.name = controller.text;
+    int result = await Provider.of<AppData>(context, listen: false).updateTask(task);
+    print('$result task updated');
   }
 }

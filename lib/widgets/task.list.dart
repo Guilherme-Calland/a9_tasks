@@ -1,5 +1,6 @@
 import 'package:a9_tasks/model/task.dart';
 import 'package:a9_tasks/shared/appdata.dart';
+import 'package:a9_tasks/widgets/task.dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,6 +18,9 @@ class TaskList extends StatelessWidget {
                 onTap: (){
                   deleteTask(data, task);
                 },
+                onLongPress: (){
+                  updateTask(context, task);
+                },
                 contentPadding: EdgeInsets.all(0),
                 title: Text(
                   task.name,
@@ -29,6 +33,12 @@ class TaskList extends StatelessWidget {
           );
         }
       ),
+    );
+  }
+
+  void updateTask(BuildContext context, Task task) {
+    showDialog(context : context, 
+      builder: (context) => TaskDialog(task: task,)
     );
   }
 
