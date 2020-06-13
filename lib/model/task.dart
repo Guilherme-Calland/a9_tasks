@@ -11,4 +11,9 @@ class Task{
     }
     return data;
   }
+
+  Task.mapToTask(Map<String, dynamic> data){
+    this.id = data['id'];
+    this.name = data['name'];
+  }
 }

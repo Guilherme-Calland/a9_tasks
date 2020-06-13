@@ -31,6 +31,7 @@ class TaskDialog extends StatelessWidget {
                 color: Colors.green,
                 onPressed: () async {
                   await createTask(context);
+                  return Navigator.pop(context);
                 },
               )
             ],

@@ -9,6 +9,18 @@ class AppData extends ChangeNotifier{
   createTask(Task task) async {
     Map<String, dynamic> data = task.taskToMap();
     int result = await database.create(data);
+    readTasks();
     return result;
+  }
+
+  readTasks() async {
+    List< Map<String, dynamic> > data =  await database.read(); 
+    List< Task > taskListTemp = List< Task >();
+    for(Map<String, dynamic> d in data){
+      Task task = Task.mapToTask(d);
+      taskListTemp.add(task);
+    }
+    taskList = taskListTemp;
+    notifyListeners();
   }
 }

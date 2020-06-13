@@ -18,7 +18,7 @@ class DatabaseHelper{
 
   _initializeDatabase() async {
     final path = await getDatabasesPath();
-    final file = join(path, 'brunas_data_base.db');
+    final file = join(path, 'bada_dase.db');
     var db = await openDatabase(file, version: 1, onCreate: _onCreate);
     return db;
   }
@@ -35,5 +35,12 @@ class DatabaseHelper{
     var datab = await database;
     int result = await datab.insert('tasks', data);
     return result;
+  }
+
+  read() async {
+    var datab = await database;
+    String sql = 'SELECT * FROM tasks ORDER BY id';
+    List< Map< String, dynamic > > data = await datab.rawQuery(sql);
+    return data;
   }
 }
