@@ -1,6 +1,10 @@
+import 'package:a9_tasks/model/task.dart';
+import 'package:a9_tasks/shared/appdata.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class TaskDialog extends StatelessWidget {
+  var controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,6 +15,7 @@ class TaskDialog extends StatelessWidget {
           child: Column(
             children: <Widget>[
               TextField(
+                controller: controller,
                 autofocus: true,
                 style: TextStyle(
                   color: Colors.green
@@ -24,8 +29,8 @@ class TaskDialog extends StatelessWidget {
                   ),
                 ),
                 color: Colors.green,
-                onPressed: (){
-                  
+                onPressed: () async {
+                  await createTask(context);
                 },
               )
             ],
@@ -33,5 +38,13 @@ class TaskDialog extends StatelessWidget {
         )
       ],
     );
+  }
+
+  createTask(BuildContext context) async {
+    String name = controller.text;
+    Task task = Task(name);
+    int result = await Provider.of<AppData>(context, listen: false)
+    .createTask(task);
+    print('id of object created: $result');
   }
 }

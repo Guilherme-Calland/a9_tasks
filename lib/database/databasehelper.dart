@@ -33,7 +33,7 @@ class DatabaseHelper{
 
   create(Map<String, dynamic> data) async{
     var datab = await database;
-    int result = datab.insert('tasks,', data);
+    int result = await datab.insert('tasks', data);
     return result;
   }
 }
