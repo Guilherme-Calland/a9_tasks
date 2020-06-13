@@ -86,12 +86,6 @@
       "languageVersion": "1.12"
     },
     {
-      "name": "nested",
-      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/nested-0.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.2"
-    },
-    {
       "name": "path",
       "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/path-1.6.4",
       "packageUri": "lib/",
@@ -102,12 +96,6 @@
       "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/petitparser-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.4"
-    },
-    {
-      "name": "provider",
-      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/provider-4.1.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.7"
     },
     {
       "name": "quiver",
@@ -128,18 +116,6 @@
       "languageVersion": "2.6"
     },
     {
-      "name": "sqflite",
-      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.7"
-    },
-    {
-      "name": "sqflite_common",
-      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/sqflite_common-1.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.7"
-    },
-    {
       "name": "stack_trace",
       "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3",
       "packageUri": "lib/",
@@ -156,12 +132,6 @@
       "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.0"
-    },
-    {
-      "name": "synchronized",
-      "rootUri": "file:///home/gui/.pub-cache/hosted/pub.dartlang.org/synchronized-2.2.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.6"
     },
     {
       "name": "term_glyph",
@@ -200,7 +170,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2020-06-13T07:09:55.208747Z",
+  "generated": "2020-06-13T13:26:21.659005Z",
   "generator": "pub",
   "generatorVersion": "2.8.4"
 }
