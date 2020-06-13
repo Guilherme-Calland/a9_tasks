@@ -1,3 +1,4 @@
+import 'package:a9_tasks/screens/home.screen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -14,20 +15,3 @@ class TasksApp extends StatelessWidget {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Text(
-          'task app',
-          style: TextStyle(
-            color: Colors.green,
-            fontSize: 40
-          )
-          )
-      )
-    );
-  }
-}
