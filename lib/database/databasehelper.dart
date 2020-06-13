@@ -43,4 +43,14 @@ class DatabaseHelper{
     List< Map< String, dynamic > > data = await datab.rawQuery(sql);
     return data;
   }
+
+  delete(int id) async {
+    var datab = await database;
+    int result = await datab.delete(
+      'tasks',
+      where: 'id = ?',
+      whereArgs: [id]
+    );
+    return result;
+  }
 }

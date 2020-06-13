@@ -23,4 +23,10 @@ class AppData extends ChangeNotifier{
     taskList = taskListTemp;
     notifyListeners();
   }
+
+  deleteTask(int id) async {
+    int result = await database.delete(id);
+    readTasks();
+    return result;
+  }
 }

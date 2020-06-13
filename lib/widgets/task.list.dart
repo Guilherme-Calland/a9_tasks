@@ -14,6 +14,9 @@ class TaskList extends StatelessWidget {
             itemBuilder: (context, index){
               Task task = data.taskList[index];
               return ListTile(
+                onTap: (){
+                  deleteTask(data, task);
+                },
                 contentPadding: EdgeInsets.all(0),
                 title: Text(
                   task.name,
@@ -27,5 +30,10 @@ class TaskList extends StatelessWidget {
         }
       ),
     );
+  }
+
+  void deleteTask(AppData data, Task task) async {
+    int result = await data.deleteTask(task.id);
+    print('$result task deleted');
   }
 }
