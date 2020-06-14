@@ -1,4 +1,5 @@
 
+import 'package:a9_tasks/methods/methods.dart';
 import 'package:flutter/material.dart';
 
 class TaskButton extends StatelessWidget {
@@ -11,21 +12,7 @@ class TaskButton extends StatelessWidget {
       child: FlatButton(
         child: Text('add task'),
         onPressed: (){
-          showDialog(
-            context: context,
-            builder: (context) => 
-            Center(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    Material(
-                      child: TextField(autofocus: true,)
-                    ),
-                  ],
-                ),
-              ),
-            )
-          );
+          showTaskDialog(context);
         },
         padding: EdgeInsets.symmetric(
           horizontal: 20, vertical: 20

@@ -11,6 +11,10 @@ class TasksApp extends StatelessWidget {
     return MaterialApp(
       home: HomeScreen(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        cursorColor: Colors.green
+      ),
     );
   }
 }
