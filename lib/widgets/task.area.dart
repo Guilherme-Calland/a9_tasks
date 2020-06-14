@@ -4,17 +4,16 @@ import 'package:flutter/material.dart';
 
 class TaskArea extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        padding: EdgeInsets.only(left: 40, top: 20),
-        child: Column(
+  Widget build(BuildContext context){
+    return Container(
+      height: 450,
+      padding: EdgeInsets.only(left: 40, top: 20),
+      child: Column(
           children: <Widget>[
             TaskList(),
             TaskButton(),
           ],
         )
-      ),
     );
   }
 }
