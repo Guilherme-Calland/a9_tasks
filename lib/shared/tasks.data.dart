@@ -30,4 +30,10 @@ class TasksData extends ChangeNotifier{
     readTasks();
     return result;
   }
+
+  deleteTask(int id) async {
+    int result = await database.delete(id);
+    readTasks();
+    return result;
+  }
 }

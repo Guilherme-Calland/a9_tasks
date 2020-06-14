@@ -31,6 +31,9 @@ class TaskList extends StatelessWidget {
                       }
                     );
                   },
+                  onTap: (){
+                    deleteTask(context, task);
+                  },
                 );
               }
             );
@@ -38,5 +41,10 @@ class TaskList extends StatelessWidget {
         )
       ),
     );
+  }
+
+  deleteTask(BuildContext context, Task task) async {
+    int result = await Provider.of<TasksData>(context, listen: false).deleteTask(task.id);
+    print('$result deleted task');
   }
 }
