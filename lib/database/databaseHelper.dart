@@ -4,7 +4,7 @@ import 'package:path/path.dart';
 class DatabaseHelper{
   static final DatabaseHelper _databaseHelper = DatabaseHelper._internal();
   factory DatabaseHelper(){ return _databaseHelper; }
-  DatabaseHelper._internal(){}
+  DatabaseHelper._internal();
   Database _database;
 
   get database async{
@@ -18,8 +18,9 @@ class DatabaseHelper{
 
   initializeDatabase() async {
     final dbPath =  await getDatabasesPath();
-    final path =  await join(dbPath, 'data_base.db');
+    final path = join(dbPath, 'data_base.db');
     var db = await openDatabase(path, version: 1, onCreate: _onCreate );
+    return db;
   }
 
   _onCreate(Database db, int version) async{
@@ -32,7 +33,7 @@ class DatabaseHelper{
 
   create(Map<String, dynamic> data) async{
     var db = await database;
-    int result = db.create(data);
+    int result = await db.insert('tasks', data);
     return result;
   }
 }

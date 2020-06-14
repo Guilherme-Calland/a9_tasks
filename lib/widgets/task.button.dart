@@ -1,5 +1,4 @@
-
-import 'package:a9_tasks/methods/methods.dart';
+import 'package:a9_tasks/widgets/task.dialog.dart';
 import 'package:flutter/material.dart';
 
 class TaskButton extends StatelessWidget {
@@ -12,7 +11,11 @@ class TaskButton extends StatelessWidget {
       child: FlatButton(
         child: Text('add task'),
         onPressed: (){
-          Methods.showTaskDialog(context);
+          showDialog(
+            context: context,
+            builder: (context) => 
+            TaskDialog()
+          );
         },
         padding: EdgeInsets.symmetric(
           horizontal: 20, vertical: 20
@@ -22,4 +25,5 @@ class TaskButton extends StatelessWidget {
     );
   }
 }
+
 
