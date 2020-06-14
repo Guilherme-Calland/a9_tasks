@@ -4,8 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TaskDialog extends StatelessWidget {
-
+  final Task task;
+  final String createOrUpdate;
   final TextEditingController controller = TextEditingController();
+  TaskDialog({this.task, this.createOrUpdate}){
+    if(task!=null){
+      controller.text = task.name;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +37,10 @@ class TaskDialog extends StatelessWidget {
                   ),
                   FlatButton(
                     onPressed: (){
-                      createTask(context);
+                      createOrUpdate == 'create' ? createTask(context): updateTask(context);
                     },
                     child: Text(
-                      'create task',
+                      createOrUpdate,
                       style: TextStyle(
                         color: Colors.black
                       ),),
@@ -63,6 +69,13 @@ class TaskDialog extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void updateTask(BuildContext context) async {
+    task.name = controller.text;
+    int result = await Provider.of<TasksData>(context, listen: false).updateTask(task);
+    print('$result updated task');
+    Navigator.pop(context);
   }
 
   void createTask(BuildContext context) async {

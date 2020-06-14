@@ -14,7 +14,7 @@ class TaskButton extends StatelessWidget {
           showDialog(
             context: context,
             builder: (context) => 
-            TaskDialog()
+            TaskDialog(createOrUpdate: 'create')
           );
         },
         padding: EdgeInsets.symmetric(

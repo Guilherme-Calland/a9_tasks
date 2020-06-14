@@ -43,4 +43,14 @@ class DatabaseHelper{
     List<Map<String,dynamic>> rawData = await db.rawQuery(sql);
     return rawData;
   }
+
+  update(Map<String, dynamic> data) async {
+    var db = await database;
+    int result = await db.update(
+      'tasks', data,
+      where: 'id = ?',
+      whereArgs: [data['id']]
+    );
+    return result;
+  }
 }

@@ -23,4 +23,11 @@ class TasksData extends ChangeNotifier{
     taskList = tempTaskList;
     notifyListeners();
   }
+
+  updateTask(Task task) async{
+    Map<String, dynamic> data = task.taskToMap();
+    int result = await database.update(data);
+    readTasks();
+    return result;
+  }
 }

@@ -1,5 +1,6 @@
 import 'package:a9_tasks/model/task.dart';
 import 'package:a9_tasks/shared/tasks.data.dart';
+import 'package:a9_tasks/widgets/task.dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +23,14 @@ class TaskList extends StatelessWidget {
                       color: Colors.green
                     )
                   ),
+                  onLongPress: (){
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return TaskDialog(createOrUpdate: 'update', task: task,);
+                      }
+                    );
+                  },
                 );
               }
             );
@@ -31,4 +40,3 @@ class TaskList extends StatelessWidget {
     );
   }
 }
-
