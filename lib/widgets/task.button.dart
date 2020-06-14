@@ -3,7 +3,7 @@ import 'package:a9_tasks/methods/methods.dart';
 import 'package:flutter/material.dart';
 
 class TaskButton extends StatelessWidget {
-  var controller  = TextEditingController();
+  final controller  = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class TaskButton extends StatelessWidget {
       child: FlatButton(
         child: Text('add task'),
         onPressed: (){
-          showTaskDialog(context);
+          Methods.showTaskDialog(context);
         },
         padding: EdgeInsets.symmetric(
           horizontal: 20, vertical: 20

@@ -9,11 +9,11 @@ class TaskArea extends StatelessWidget {
       height: 450,
       padding: EdgeInsets.only(left: 40, top: 20),
       child: Column(
-          children: <Widget>[
-            TaskList(),
-            TaskButton(),
-          ],
-        )
+        children: <Widget>[
+          TaskList(),
+          TaskButton(),
+        ],
+      )
     );
   }
 }
