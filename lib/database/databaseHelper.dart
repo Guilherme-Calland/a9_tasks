@@ -36,4 +36,11 @@ class DatabaseHelper{
     int result = await db.insert('tasks', data);
     return result;
   }
+
+  read() async {
+    var db = await database;
+    String sql = 'SELECT * FROM tasks ORDER BY id';
+    List<Map<String,dynamic>> rawData = await db.rawQuery(sql);
+    return rawData;
+  }
 }

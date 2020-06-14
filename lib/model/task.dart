@@ -3,6 +3,11 @@ class Task{
   String name;
   Task(this.name);
 
+  Task.mapToTask(Map< String, dynamic > data){
+    this.id = data['id'];
+    this.name = data['name'];
+  }
+
   taskToMap(){
     Map<String, dynamic> data = {
       'name' : this.name
@@ -12,4 +17,5 @@ class Task{
     }
     return data;
   }
+
 }

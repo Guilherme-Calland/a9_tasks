@@ -70,5 +70,6 @@ class TaskDialog extends StatelessWidget {
     Task task = Task(name);
     int result = await Provider.of<TasksData>(context, listen: false).createTask(task);
     print('created task of id: $result');
+    Navigator.pop(context);
   }
 }
